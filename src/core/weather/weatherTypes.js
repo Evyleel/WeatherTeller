@@ -1,19 +1,19 @@
-export const WeatherType = {
+export const WeatherType = Object.freeze({
 
-    CLEAR:"clear",
+    CLEAR: "clear",
 
-    CLOUDY:"cloudy",
+    CLOUDY: "cloudy",
 
-    RAIN:"rain",
+    RAIN: "rain",
 
-    THUNDER:"thunder",
+    THUNDER: "thunder",
 
-    SNOW:"snow",
+    SNOW: "snow",
 
-    WINDY:"windy",
+    WINDY: "windy",
 
-    FOG:"fog",
+    FOG: "fog",
 
-    NIGHT:"night"
+    NIGHT: "night"
 
-};
+});

@@ -1,59 +1,91 @@
 export const AppState = {
 
-    app:{
+    app: {
 
-        initialized:false,
+        initialized: false,
 
-        version:"0.1.0"
+        loading:true,
 
-    },
+        error:null,
 
-    user:{
-
-        city:null,
-
-        latitude:null,
-
-        longitude:null,
-
-        theme:"light"
+        version: "0.1.0"
 
     },
 
-    weather:{
+    user: {
 
-        type:null,
+        city: null,
 
-        temperature:null,
+        latitude: null,
 
-        humidity:null,
+        longitude: null,
 
-        wind:null,
+        timezone:null,
 
-        pressure:null,
+        theme: "light"
 
-        uv:null
+    },
+
+    weather: {
+
+        current:{},
+
+        hourly:[],
+
+        daily:[],
+
+        lastUpdated:null,
+
+        type: null,
+
+        temperature: null,
+
+        humidity: null,
+
+        pressure: null,
+
+        windSpeed: null,
+
+        uvIndex: null,
+
+        forecast: []
 
     },
 
     hikari:{
 
-        mood:"happy",
+    mood:"happy",
 
-        outfit:"default",
+    expression:"smile",
 
-        animation:"idle",
+    outfit:"default",
 
-        dialogue:"",
+    animation:"idle",
 
-        expression:"smile"
+    dialogue:"",
+
+    affection:0,
+
+    streak:0
+
+},
+
+    background: {
+
+        theme: "day"
 
     },
 
-    background:{
+    settings:{
 
-        theme:"day"
+    temperatureUnit:"celsius",
 
-    }
+    language:"en",
+
+    theme:"light",
+
+    animation:true
+
+}
 
 };
