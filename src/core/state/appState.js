@@ -1,91 +1,50 @@
+// ======================================================
+// 🌸 Weather Teller Studio
+// Application State
+// ======================================================
+
 export const AppState = {
 
     app: {
 
         initialized: false,
-
-        loading:true,
-
-        error:null,
-
-        version: "0.1.0"
+        loading: false,
+        error: null
 
     },
 
     user: {
 
         city: null,
-
         latitude: null,
-
-        longitude: null,
-
-        timezone:null,
-
-        theme: "light"
+        longitude: null
 
     },
 
     weather: {
 
-        current:{},
-
-        hourly:[],
-
-        daily:[],
-
-        lastUpdated:null,
-
-        type: null,
-
-        temperature: null,
-
-        humidity: null,
-
-        pressure: null,
-
-        windSpeed: null,
-
-        uvIndex: null,
-
-        forecast: []
+        current: null,
+        forecast: [],
+        profile: null
 
     },
 
-    hikari:{
+    hikari: {
 
-    mood:"happy",
-
-    expression:"smile",
-
-    outfit:"default",
-
-    animation:"idle",
-
-    dialogue:"",
-
-    affection:0,
-
-    streak:0
-
-},
-
-    background: {
-
-        theme: "day"
+        mood: null,
+        expression: null,
+        outfit: null,
+        animation: null,
+        dialogue: null
 
     },
 
-    settings:{
+    settings: {
 
-    temperatureUnit:"celsius",
+        theme: "system",
+        language: "en",
+        unit: "metric"
 
-    language:"en",
-
-    theme:"light",
-
-    animation:true
-
-}
+    }
 
 };

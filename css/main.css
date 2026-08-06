@@ -163,3 +163,27 @@ p{
     border-radius:20px;
 
 }
+
+html[data-weather="sunny"]{
+    background:linear-gradient(#ffe082,#fff8e1);
+}
+
+html[data-weather="cloudy"]{
+    background:linear-gradient(#cfd8dc,#eceff1);
+}
+
+html[data-weather="rain"]{
+    background:linear-gradient(#4a6fa5,#8ea8c3);
+}
+
+html[data-weather="snow"]{
+    background:linear-gradient(#dfe9f3,#ffffff);
+}
+
+html[data-weather="night"]{
+    background:linear-gradient(#0f172a,#1e293b);
+}
+
+html{
+    transition:background .6s ease;
+}

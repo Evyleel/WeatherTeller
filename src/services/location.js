@@ -3,13 +3,13 @@
 // Location Service
 // ======================================================
 
-export async function getCurrentLocation() {
+export function getCurrentLocation() {
 
     return new Promise((resolve, reject) => {
 
         if (!navigator.geolocation) {
 
-            reject(new Error("Geolocation is not supported"));
+            reject(new Error("Geolocation is not supported."));
 
             return;
 
@@ -17,15 +17,35 @@ export async function getCurrentLocation() {
 
         navigator.geolocation.getCurrentPosition(
 
-            ({ coords }) => resolve({
+            ({ coords }) => {
 
-                latitude: coords.latitude,
+                resolve({
 
-                longitude: coords.longitude
+                    latitude: coords.latitude,
 
-            }),
+                    longitude: coords.longitude,
 
-            () => reject(new Error("Location permission denied"))
+                    accuracy: coords.accuracy
+
+                });
+
+            },
+
+            (error) => {
+
+                reject(error);
+
+            },
+
+            {
+
+                enableHighAccuracy: true,
+
+                timeout: 10000,
+
+                maximumAge: 300000
+
+            }
 
         );
 

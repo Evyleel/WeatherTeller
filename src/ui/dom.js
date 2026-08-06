@@ -11,6 +11,10 @@ export const DOM = {
 
     dialogue: document.getElementById("dialogue"),
 
-    character: document.getElementById("hikari")
+    character: document.getElementById("hikari"),
+
+    city: document.getElementById("city-name"),
+
+    app: document.getElementById("app")
 
 };

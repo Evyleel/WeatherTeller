@@ -1,3 +1,8 @@
+// ======================================================
+// 🌸 Weather Teller Studio
+// Weather Renderer
+// ======================================================
+
 import { DOM } from "./dom.js";
 
 export function renderWeather(weather) {
@@ -5,9 +10,9 @@ export function renderWeather(weather) {
     if (!weather?.current) return;
 
     DOM.temperature.textContent =
-        `${weather.current.temperature}°C`;
+        `${Math.round(weather.current.temperature)}°`;
 
     DOM.weatherType.textContent =
-        weather.current.type;
+        weather.current.type.toUpperCase();
 
 }

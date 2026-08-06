@@ -1,21 +1,38 @@
 // ======================================================
-// 🌸 Hikari Engine
+// 🌸 Weather Teller Studio
+// Hikari Engine
 // ======================================================
 
-export function createHikariState(weather){
+export function createHikariState(weather) {
 
-    return{
+    const { profile } = weather;
 
-        mood:weather.profile.mood,
+    return {
 
-        outfit:weather.profile.outfit,
+        mood: profile.mood,
 
-        animation:weather.profile.animation,
+        outfit: profile.outfit,
 
-        dialogue:weather.profile.dialogue,
+        animation: profile.animation,
 
-        expression:"smile"
+        expression: profile.expression,
+
+        dialogue: getRandomDialogue(profile.dialogues)
 
     };
+
+}
+
+function getRandomDialogue(dialogues) {
+
+    if (!dialogues || dialogues.length === 0) {
+
+        return "";
+
+    }
+
+    const index = Math.floor(Math.random() * dialogues.length);
+
+    return dialogues[index];
 
 }
