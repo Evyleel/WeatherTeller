@@ -1,6 +1,9 @@
 :root{
 
     /* Colors */
+
+    --bg-start:#dfe9f3;
+    --bg-end:#ffffff;
     --primary:#5B8CFF;
     --secondary:#FF69B4;
 
@@ -46,5 +49,46 @@
     --text-light:#CBD5E1;
 
     --border:#334155;
+
+}
+
+html{
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg-start),
+            var(--bg-end)
+        );
+
+    transition:.6s ease;
+
+}
+
+html[data-weather="sunny"]{
+
+    --bg-start:#FFE082;
+    --bg-end:#FFF8E1;
+
+}
+
+html[data-weather="rain"]{
+
+    --bg-start:#4A6FA5;
+    --bg-end:#8EA8C3;
+
+}
+
+html[data-weather="cloudy"]{
+
+    --bg-start:#CFD8DC;
+    --bg-end:#ECEFF1;
+
+}
+
+html[data-weather="night"]{
+
+    --bg-start:#0F172A;
+    --bg-end:#1E293B;
 
 }

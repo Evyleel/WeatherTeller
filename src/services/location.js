@@ -9,7 +9,7 @@ export async function getCurrentLocation() {
 
         if (!navigator.geolocation) {
 
-            reject(new Error("Geolocation is not supported."));
+            reject(new Error("Geolocation is not supported"));
 
             return;
 
@@ -17,19 +17,15 @@ export async function getCurrentLocation() {
 
         navigator.geolocation.getCurrentPosition(
 
-            ({ coords }) => {
+            ({ coords }) => resolve({
 
-                resolve({
+                latitude: coords.latitude,
 
-                    latitude: coords.latitude,
+                longitude: coords.longitude
 
-                    longitude: coords.longitude
+            }),
 
-                });
-
-            },
-
-            reject
+            () => reject(new Error("Location permission denied"))
 
         );
 

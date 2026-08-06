@@ -1,17 +1,31 @@
 // ======================================================
 // 🌸 Weather Teller Studio
-// Weather API
+// Weather API Service
 // ======================================================
 
-export async function fetchWeather(latitude, longitude){
+const BASE_URL = "https://api.open-meteo.com/v1/forecast";
 
-    const url =
+export async function fetchWeather(latitude, longitude) {
 
-`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,surface_pressure`;
+    const params = new URLSearchParams({
 
-    const response = await fetch(url);
+        latitude,
 
-    if(!response.ok){
+        longitude,
+
+        current: [
+            "temperature_2m",
+            "relative_humidity_2m",
+            "weather_code",
+            "wind_speed_10m",
+            "surface_pressure"
+        ].join(",")
+
+    });
+
+    const response = await fetch(`${BASE_URL}?${params}`);
+
+    if (!response.ok) {
 
         throw new Error("Failed to fetch weather.");
 
@@ -19,29 +33,19 @@ export async function fetchWeather(latitude, longitude){
 
     const data = await response.json();
 
-    return{
+    return {
 
-        weatherCode:
+        weatherCode: data.current.weather_code,
 
-            data.current.weather_code,
+        temperature: data.current.temperature_2m,
 
-        temperature:
+        humidity: data.current.relative_humidity_2m,
 
-            data.current.temperature_2m,
+        windSpeed: data.current.wind_speed_10m,
 
-        humidity:
+        pressure: data.current.surface_pressure,
 
-            data.current.relative_humidity_2m,
-
-        windSpeed:
-
-            data.current.wind_speed_10m,
-
-        pressure:
-
-            data.current.surface_pressure,
-
-        uvIndex:0
+        uvIndex: null
 
     };
 

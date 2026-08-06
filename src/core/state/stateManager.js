@@ -1,6 +1,7 @@
 // src/core/state/stateManager.js
 
 import { AppState } from "./appState.js";
+import { deepMerge } from "../../utils/helpers.js";
 
 let state = structuredClone(AppState);
 
@@ -12,13 +13,7 @@ export function getState() {
 
 export function setState(partialState) {
 
-    state = {
-
-        ...state,
-
-        ...partialState
-
-    };
+    state = deepMerge(state, partialState);
 
     listeners.forEach(listener => listener(state));
 

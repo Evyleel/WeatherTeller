@@ -1,34 +1,36 @@
 // ======================================================
-// 🌸 Weather Teller Studio By S a n h i t y `
+// 🌸 Weather Teller Studio
 // Weather Engine
 // ======================================================
 
 import { mapWeatherCode } from "./weatherMapper.js";
 import { WeatherProfiles } from "./weatherProfiles.js";
 
-export function createWeatherState(rawWeather){
+export function createWeatherState(rawWeather) {
 
     const type = mapWeatherCode(rawWeather.weatherCode);
 
     const profile = WeatherProfiles[type];
 
-    return{
+    return {
 
-        current:{
+        current: {
 
             type,
 
-            temperature:rawWeather.temperature,
+            temperature: rawWeather.temperature,
 
-            humidity:rawWeather.humidity,
+            humidity: rawWeather.humidity,
 
-            windSpeed:rawWeather.windSpeed,
+            windSpeed: rawWeather.windSpeed,
 
-            pressure:rawWeather.pressure,
+            pressure: rawWeather.pressure,
 
-            uvIndex:rawWeather.uvIndex
+            uvIndex: rawWeather.uvIndex
 
         },
+
+        forecast: [],
 
         profile
 

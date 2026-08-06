@@ -1,11 +1,13 @@
 import { DOM } from "./dom.js";
 
-export function renderWeather(weather){
+export function renderWeather(weather) {
+
+    if (!weather?.current) return;
 
     DOM.temperature.textContent =
-        `${weather.current.temperature}°`;
+        `${weather.current.temperature}°C`;
 
-    DOM.weather.textContent =
+    DOM.weatherType.textContent =
         weather.current.type;
 
 }

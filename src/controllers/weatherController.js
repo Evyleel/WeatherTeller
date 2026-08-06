@@ -13,68 +13,34 @@ import { setState } from "../core/state/stateManager.js";
 
 export async function initializeWeather() {
 
-    try {
+    const location = await getCurrentLocation();
 
-        // Get user location
-        const location = await getCurrentLocation();
+    const rawWeather = await fetchWeather(
 
-        // Fetch raw weather
-        const rawWeather = await fetchWeather(
-            location.latitude,
-            location.longitude
-        );
+        location.latitude,
 
-        // Normalize weather
-        const weather = createWeatherState(rawWeather);
+        location.longitude
 
-        // Generate Hikari state
-        const hikari = createHikariState(weather);
+    );
 
-        // Save to AppState
-        setState({
+    const weather = createWeatherState(rawWeather);
 
-            user: {
+    const hikari = createHikariState(weather);
 
-                latitude: location.latitude,
+    setState({
 
-                longitude: location.longitude
+        user:{
 
-            },
+            latitude:location.latitude,
 
-            weather,
+            longitude:location.longitude
 
-            hikari,
+        },
 
-            app: {
+        weather,
 
-                initialized: true,
+        hikari
 
-                loading: false,
-
-                error: null
-
-            }
-
-        });
-
-    } catch (error) {
-
-        console.error(error);
-
-        setState({
-
-            app: {
-
-                initialized: false,
-
-                loading: false,
-
-                error: error.message
-
-            }
-
-        });
-
-    }
+    });
 
 }

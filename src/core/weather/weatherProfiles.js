@@ -12,7 +12,7 @@ export const WeatherProfiles = {
             "idle",
             "umbrella",
             "blink",
-        ]
+        ],
 
         background:"sunny",
 
@@ -20,7 +20,7 @@ export const WeatherProfiles = {
             "rain_01",
             "rain__02",
             "rain__03",
-        ]
+        ],
 
     },
 

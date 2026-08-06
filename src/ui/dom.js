@@ -1,19 +1,16 @@
-export const DOM={
+// ======================================================
+// 🌸 Weather Teller Studio
+// DOM Cache
+// ======================================================
 
-hero:
+export const DOM = {
 
-document.querySelector(".hero"),
+    temperature: document.getElementById("temperature"),
 
-temperature:
+    weatherType: document.getElementById("weather-type"),
 
-document.querySelector("#temperature"),
+    dialogue: document.getElementById("dialogue"),
 
-dialogue:
+    character: document.getElementById("hikari")
 
-document.querySelector("#dialogue"),
-
-character:
-
-document.querySelector("#hikari")
-
-}
+};

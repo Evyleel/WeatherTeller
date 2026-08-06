@@ -3,12 +3,13 @@
 // UI Renderer
 // ======================================================
 
+import { renderBackground } from "./backgroundRenderer.js";
 import { renderWeather } from "./weatherRenderer.js";
 import { renderCharacter } from "./characterRenderer.js";
 
 export function render(state){
 
-    if(!state) return;
+    renderBackground(state.weather);
 
     renderWeather(state.weather);
 
