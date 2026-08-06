@@ -7,7 +7,7 @@ export function renderBackground(weather) {
 
     if (!weather?.profile) return;
 
-    document.documentElement.dataset.weather =
+    document.body.dataset.weather =
         weather.profile.background;
 
 }

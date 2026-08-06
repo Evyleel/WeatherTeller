@@ -24,7 +24,6 @@ export const AppState = {
     weather: {
 
         current: null,
-        forecast: [],
         profile: null
 
     },
@@ -33,17 +32,8 @@ export const AppState = {
 
         mood: null,
         expression: null,
-        outfit: null,
-        animation: null,
-        dialogue: null
-
-    },
-
-    settings: {
-
-        theme: "system",
-        language: "en",
-        unit: "metric"
+        outfit: "placeholder",
+        dialogue: ""
 
     }
 

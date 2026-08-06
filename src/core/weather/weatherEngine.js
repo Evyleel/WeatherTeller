@@ -30,8 +30,6 @@ export function createWeatherState(rawWeather) {
 
         },
 
-        forecast: [],
-
         profile
 
     };

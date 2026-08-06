@@ -4,7 +4,7 @@
 // ======================================================
 
 import { getCurrentLocation } from "../services/location.js";
-import { fetchWeather } from "../services/weather/provider.js";
+import { fetchWeather } from "../services/weatherApi.js";
 
 import { createWeatherState } from "../core/weather/weatherEngine.js";
 import { createHikariState } from "../core/hikari/hikariEngine.js";
@@ -18,7 +18,6 @@ export async function initializeWeather() {
         app: {
 
             loading: true,
-
             error: null
 
         }
@@ -32,7 +31,6 @@ export async function initializeWeather() {
         const rawWeather = await fetchWeather(
 
             location.latitude,
-
             location.longitude
 
         );
@@ -46,9 +44,7 @@ export async function initializeWeather() {
             app: {
 
                 initialized: true,
-
                 loading: false,
-
                 error: null
 
             },
@@ -56,13 +52,11 @@ export async function initializeWeather() {
             user: {
 
                 latitude: location.latitude,
-
                 longitude: location.longitude
 
             },
 
             weather,
-
             hikari
 
         });
@@ -71,14 +65,14 @@ export async function initializeWeather() {
 
     catch (error) {
 
+        console.error(error);
+
         setState({
 
             app: {
 
                 initialized: false,
-
                 loading: false,
-
                 error: error.message
 
             }

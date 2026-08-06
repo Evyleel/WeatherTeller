@@ -187,3 +187,94 @@ html[data-weather="night"]{
 html{
     transition:background .6s ease;
 }
+
+#hikari{
+
+    width:320px;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* =========================================
+   Dynamic Background
+========================================= */
+
+body {
+
+    transition:
+        background 600ms ease,
+        color 600ms ease;
+
+}
+
+body[data-weather="sunny"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #87CEEB 0%,
+            #BDEBFF 60%,
+            #FFF4C2 100%
+        );
+
+}
+
+body[data-weather="cloudy"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #8FA4B8,
+            #D7E0EA
+        );
+
+}
+
+body[data-weather="rain"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #465A73,
+            #72869B
+        );
+
+}
+
+body[data-weather="storm"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #283747,
+            #566573
+        );
+
+}

@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Teller</title>
+
+    <link rel="icon" href="assets/icons/favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
 <body>
 
 <header class="header">
@@ -22,51 +39,59 @@
 
     <div class="container">
 
-    <div class="hero__character">
+        <div class="hero__character">
 
-        <img
-        src="assets/character/hikari-placeholder.png"
-        alt="Hikari">
+            <img
+                id="hikari"
+                src="assets/characters/placeholder.png"
+                alt="Hikari"
+            >
 
         </div>
 
-    <div class="hero__content">
+        <div class="hero__content">
 
-    <div class="hero__greeting">
+            <div class="hero__greeting">
 
-    <span>🌸 Good Evening!</span>
+                <span id="greeting">
 
-    <h1>I'm Hikari</h1>
+    Loading...
 
-    <p>Your Anime Weather Companion</p>
+                </span>
+                <p id="hikari-mood">😊 Happy</p>
+                <p id="current-outfit"></p>
 
-</div>
+                <h1>I'm Hikari</h1>
 
-<div class="weather-card">
+                <p>Your Anime Weather Companion</p>
 
-    <p>📍 Jakarta</p>
+            </div>
 
-    <h2>28°C</h2>
+            <div class="weather-card">
 
-    <span>Mostly Sunny</span>
+                <p id="city-name">📍 Loading...</p>
 
-</div>
+                <h2 id="temperature">--°</h2>
 
-<div class="dialogue-card">
+                <span id="weather-type">Loading...</span>
 
-    <h3>💬 Hikari Says</h3>
+            </div>
 
-    <p>
-        Perfect weather for photography today!
-    </p>
+            <div class="dialogue-card">
 
-</div>
+                <h3>💬 Hikari Says</h3>
+
+                <p id="dialogue">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -160,7 +185,7 @@
 
          <p>Humidity</p>
 
-         <h3>72%</h3>
+         <h3 id="humidity">--%</h3>
 
 </div>
 
@@ -168,7 +193,7 @@
 
          <p>Wind</p>
 
-         <h3>12 km/h</h3>
+         <h3 id="wind">-- km/h</h3>
 
 </div>
 
@@ -176,7 +201,7 @@
 
          <p>UV Index</p>
 
-         <h3>10 km/h</h3>
+         <h3 id="uv">--</h3>
 
 </div>
 
@@ -184,7 +209,7 @@
 
          <p>Pressure</p>
 
-         <h3>1023 hPa</h3>
+         <h3 id="pressure">-- hPa</h3>
 
 </div>
 
@@ -195,11 +220,13 @@
 <footer class="footer">
 
     <p>
-
         Made with ❤️ by EL Slaviaga
-
     </p>
 
 </footer>
 
+<script type="module" src="script.js"></script>
+
 </body>
+
+</html>

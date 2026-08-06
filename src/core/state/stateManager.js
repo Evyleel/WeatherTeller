@@ -19,12 +19,14 @@ export function setState(partialState) {
 
 }
 
-export function subscribe(listener){
+export function subscribe(listener) {
 
     listeners.add(listener);
 
     // Langsung kirim state pertama
     listener(state);
+
+    return () => unsubscribe(listener);
 
 }
 

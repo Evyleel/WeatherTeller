@@ -1,40 +1,75 @@
+// ======================================================
+// 🌸 Weather Teller Studio
+// Weather Profiles
+// ======================================================
+
 import { WeatherType } from "./weatherTypes.js";
 
 export const WeatherProfiles = {
 
-    [WeatherType.CLEAR]:{
+    [WeatherType.CLEAR]: {
 
-        mood:"happy",
+        mood: "happy",
 
-        outfit:"summer",
+        expression: "smile",
 
-        animation:[
-            "idle",
-            "umbrella",
-            "blink",
-        ],
+        outfit: "summer",
 
-        background:"sunny",
+        background: "sunny",
 
-        dialogue:[
-            "rain_01",
-            "rain__02",
-            "rain__03",
-        ],
+        dialogues: [
+
+            "Beautiful weather today! ☀️",
+
+            "Let's go outside!",
+
+            "Perfect day for photography!"
+
+        ]
 
     },
 
-    [WeatherType.RAIN]:{
+    [WeatherType.CLOUDY]: {
 
-        mood:"caring",
+        mood: "calm",
 
-        outfit:"raincoat",
+        expression: "normal",
 
-        animation:"umbrella",
+        outfit: "casual",
 
-        background:"rain",
+        background: "cloudy",
 
-        dialogue:"rain_01"
+        dialogues: [
+
+            "Cloudy days are relaxing.",
+
+            "Perfect weather for coffee.",
+
+            "Take it easy today."
+
+        ]
+
+    },
+
+    [WeatherType.RAIN]: {
+
+        mood: "caring",
+
+        expression: "happy",
+
+        outfit: "raincoat",
+
+        background: "rain",
+
+        dialogues: [
+
+            "Don't forget your umbrella! ☔",
+
+            "Stay warm today!",
+
+            "Looks like rain all day."
+
+        ]
 
     }
 

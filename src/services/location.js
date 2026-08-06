@@ -23,26 +23,18 @@ export function getCurrentLocation() {
 
                     latitude: coords.latitude,
 
-                    longitude: coords.longitude,
-
-                    accuracy: coords.accuracy
+                    longitude: coords.longitude
 
                 });
 
             },
 
-            (error) => {
-
-                reject(error);
-
-            },
+            reject,
 
             {
 
                 enableHighAccuracy: true,
-
                 timeout: 10000,
-
                 maximumAge: 300000
 
             }

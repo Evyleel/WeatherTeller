@@ -1,0 +1,34 @@
+@keyframes hikariFloat {
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+#hikari {
+
+    animation:
+
+        hikariFloat 4s ease-in-out infinite;
+
+    transition:
+
+        opacity .4s ease,
+        transform .4s ease;
+
+}

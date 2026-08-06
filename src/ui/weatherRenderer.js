@@ -1,18 +1,7 @@
-// ======================================================
-// 🌸 Weather Teller Studio
-// Weather Renderer
-// ======================================================
+const view = createWeatherViewModel(weather);
 
-import { DOM } from "./dom.js";
+DOM.temperature.textContent = view.temperature;
 
-export function renderWeather(weather) {
+DOM.humidity.textContent = view.humidity;
 
-    if (!weather?.current) return;
-
-    DOM.temperature.textContent =
-        `${Math.round(weather.current.temperature)}°`;
-
-    DOM.weatherType.textContent =
-        weather.current.type.toUpperCase();
-
-}
+DOM.wind.textContent = view.wind;

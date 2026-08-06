@@ -5,27 +5,27 @@
 
 export function createHikariState(weather) {
 
-    const { profile } = weather;
+    const profile = weather.profile;
 
     return {
 
+        greeting: getGreeting(),
+
         mood: profile.mood,
-
-        outfit: profile.outfit,
-
-        animation: profile.animation,
 
         expression: profile.expression,
 
-        dialogue: getRandomDialogue(profile.dialogues)
+        outfit: profile.outfit,
+
+        dialogue: randomDialogue(profile.dialogues)
 
     };
 
 }
 
-function getRandomDialogue(dialogues) {
+function randomDialogue(dialogues = []) {
 
-    if (!dialogues || dialogues.length === 0) {
+    if (!Array.isArray(dialogues) || dialogues.length === 0) {
 
         return "";
 
@@ -34,5 +34,21 @@ function getRandomDialogue(dialogues) {
     const index = Math.floor(Math.random() * dialogues.length);
 
     return dialogues[index];
+
+}
+
+function getGreeting() {
+
+    const hour = new Date().getHours();
+
+    if (hour < 5) return "Good Night 🌙";
+
+    if (hour < 11) return "Good Morning ☀️";
+
+    if (hour < 15) return "Good Afternoon 🌤️";
+
+    if (hour < 18) return "Good Evening 🌆";
+
+    return "Good Night 🌙";
 
 }
