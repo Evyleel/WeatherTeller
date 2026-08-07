@@ -38,3 +38,36 @@ export function deepMerge(target, source) {
     return output;
 
 }
+
+// ======================================================
+// 🌤 Weather Icon Helper
+// ======================================================
+
+export function weatherIcon(type) {
+
+    switch (type?.toLowerCase()) {
+
+        case "clear":
+            return "☀️";
+
+        case "cloudy":
+            return "☁️";
+
+        case "rain":
+            return "🌧️";
+
+        case "storm":
+            return "⛈️";
+
+        case "snow":
+            return "❄️";
+
+        case "fog":
+            return "🌫️";
+
+        default:
+            return "🌤️";
+
+    }
+
+}

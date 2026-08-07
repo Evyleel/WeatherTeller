@@ -1,34 +1,75 @@
-@keyframes hikariFloat {
+/* ======================================================
+   🌸 Weather Teller Studio
+   Animation
+====================================================== */
 
-    0% {
+#hikari{
 
-        transform: translateY(0px);
+    width:320px;
+
+    max-width:100%;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 24px 35px rgba(0,0,0,.22));
+
+    animation:
+        hikariEnter .8s ease-out,
+        floating 5s ease-in-out .8s infinite;
+
+}
+
+@keyframes hikariEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.96);
 
     }
 
-    50% {
+    to{
 
-        transform: translateY(-8px);
+        opacity:1;
 
-    }
-
-    100% {
-
-        transform: translateY(0px);
+        transform:
+            translateY(0)
+            scale(1);
 
     }
 
 }
 
-#hikari {
+@keyframes floating{
 
-    animation:
+    0%{
 
-        hikariFloat 4s ease-in-out infinite;
+        transform:
+            translateY(0)
+            rotate(-1deg);
 
-    transition:
+    }
 
-        opacity .4s ease,
-        transform .4s ease;
+    50%{
+
+        transform:
+            translateY(-10px)
+            rotate(1deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(-1deg);
+
+    }
 
 }

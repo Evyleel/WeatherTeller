@@ -6,6 +6,8 @@
 import { renderBackground } from "./backgroundRenderer.js";
 import { renderWeather } from "./weatherRenderer.js";
 import { renderCharacter } from "./characterRenderer.js";
+import { renderDetails } from "./detailsRenderer.js";
+
 
 export function render(state) {
 
@@ -28,6 +30,8 @@ export function render(state) {
     renderBackground(state.weather);
 
     renderWeather(state.weather);
+
+    renderDetails(state.weather);
 
     renderCharacter(state.hikari);
 

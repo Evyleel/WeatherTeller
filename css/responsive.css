@@ -1,0 +1,53 @@
+/* ======================================================
+   🌸 Weather Teller Studio
+   Responsive
+====================================================== */
+
+@media (max-width: 768px){
+
+    .hero .container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero__character{
+
+        order:-1;
+
+        width:min(280px,80vw);
+
+    }
+
+    .weather-card,
+    .dialogue-card{
+
+        width:100%;
+
+    }
+
+    .details-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    #temperature{
+
+        font-size:3rem;
+
+    }
+
+}

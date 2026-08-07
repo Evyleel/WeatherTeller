@@ -1,16 +1,18 @@
 .hero{
 
-    min-height:100vh;
+    min-height:80vh;
 
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:space-between;
 
     position:relative;
 
     overflow:hidden;
+
+    gap:48px;
 
 }
 
@@ -30,9 +32,13 @@
 
 .hero__character{
 
-    width:260px;
+    width:min(360px,100%);
 
-    max-width:80%;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
 }
 
@@ -157,5 +163,60 @@
     bottom:-100px;
 
     right:-100px;
+
+}
+
+.hero__content{
+
+    flex:1;
+
+}
+
+.hero__character{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.weather-card,
+.dialogue-card{
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.weather-card:hover,
+.dialogue-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+#hikari-mood{
+
+    display:inline-block;
+
+    margin-top:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    font-size:.9rem;
+
+    font-weight:600;
 
 }
