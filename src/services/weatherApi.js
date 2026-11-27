@@ -49,13 +49,12 @@ export async function fetchWeather(latitude, longitude) {
 
     const cacheKey = getCacheKey(lat, lon);
     const cached = readCache(cacheKey);
-    const now = Date.now();
 
     if (
         cached &&
         isValidWeather(cached.data) &&
         Number.isFinite(cached.savedAt) &&
-        now - cached.savedAt < CACHE_DURATION
+        Date.now() - cached.savedAt < CACHE_DURATION
     ) {
         return cached.data;
     }
@@ -95,7 +94,7 @@ export async function fetchWeather(latitude, longitude) {
         }
 
         writeCache(cacheKey, {
-            savedAt: now,
+            savedAt: Date.now(),
             data: weather
         });
 
