@@ -39,6 +39,21 @@ function isValidWeather(data) {
         Number.isFinite(data.pressure);
 }
 
+function getUvIndex(json) {
+    const times = json?.hourly?.time;
+    const values = json?.hourly?.uv_index;
+    const currentTime = json?.current?.time;
+
+    if (!Array.isArray(times) || !Array.isArray(values) || !currentTime) {
+        return null;
+    }
+
+    const index = times.indexOf(currentTime);
+    const value = index >= 0 ? values[index] : null;
+
+    return Number.isFinite(value) ? value : null;
+}
+
 export async function fetchWeather(latitude, longitude) {
     const lat = Number(latitude);
     const lon = Number(longitude);
@@ -68,7 +83,9 @@ export async function fetchWeather(latitude, longitude) {
             "weather_code",
             "wind_speed_10m",
             "surface_pressure"
-        ].join(",")
+        ].join(","),
+        hourly: "uv_index",
+        timezone: "auto"
     });
 
     try {
@@ -86,7 +103,8 @@ export async function fetchWeather(latitude, longitude) {
             temperature: current?.temperature_2m,
             humidity: current?.relative_humidity_2m,
             windSpeed: current?.wind_speed_10m,
-            pressure: current?.surface_pressure
+            pressure: current?.surface_pressure,
+            uvIndex: getUvIndex(json)
         };
 
         if (!isValidWeather(weather)) {
