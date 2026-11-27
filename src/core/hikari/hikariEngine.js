@@ -3,19 +3,26 @@
 // Hikari Engine
 // ======================================================
 
+const FALLBACK_PROFILE = {
+    mood: "calm",
+    expression: "normal",
+    outfit: "casual",
+    dialogues: []
+};
+
 export function createHikariState(weather) {
 
-    const profile = weather.profile;
+    const profile = weather?.profile ?? FALLBACK_PROFILE;
 
     return {
 
         greeting: getGreeting(),
 
-        mood: profile.mood,
+        mood: profile.mood ?? FALLBACK_PROFILE.mood,
 
-        expression: profile.expression,
+        expression: profile.expression ?? FALLBACK_PROFILE.expression,
 
-        outfit: profile.outfit,
+        outfit: profile.outfit ?? FALLBACK_PROFILE.outfit,
 
         dialogue: randomDialogue(profile.dialogues)
 
